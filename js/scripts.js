@@ -42,12 +42,14 @@ function getTotal() {
     order.orderName = $('.ordername input').val();
     $('.order').show();
     $('p .totalpizzas').text(order.orderItems.length);
-    $('p .pricetotal').text(order.orderTotal);
+    $('p .pricetotal').text(order.orderTotal.toFixed(2));
+    $('#pizzaform, .add-pizza, .get-total').hide();
 };
 
 function applyCoupon() {
   order.applyCoupon();
-  $('p .pricetotal').text(order.orderTotal);
+  $('p .pricetotal').text(order.orderTotal.toFixed(2));
+  $('button.apply-coupon').hide();
 }
 
 $(document).ready(function() {
