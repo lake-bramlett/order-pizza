@@ -34,11 +34,22 @@ function addPizza() {
   order.orderTotal += (pizza.size + pizza.toppings.length);
 };
 
+function getTotal() {
+    order.orderName = $('.ordername input').val();
+    $('.order').show();
+    $('p .totalpizzas').text(order.orderItems.length);
+    $('p .pricetotal').text(order.orderTotal);
+};
+
 $(document).ready(function() {
  console.log('jquery enabled');
   $('button.add-pizza').click(function() {
-    console.log('button clicked');
+    console.log('pizza added');
      addPizza();
+  });
+  $('button.get-total').click(function() {
+    console.log('user gets total');
+    getTotal();
   });
 
 
