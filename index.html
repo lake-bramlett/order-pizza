@@ -49,10 +49,14 @@
         </div>
         <button class="btn add-pizza" type="button" name="button">ADD PIZZA</button>
       </form>
-      <button class="btn get-total" type="button" name="button">GET TOTAL</button>
+      <button class="btn get-total" type="button" name="button">Place Order</button>
       <div class="order">
-        <p>You ordered <span class="totalpizzas"></span> pizza(s)!</p>
+        <p>Thank you <span class="customername"></span>!</p>
+        <p>You ordered <span class="totalpizzas"></span>!</p>
         <p>Your total is: $<span class="pricetotal"></span>!</p>
+        <p class="coupon-alert">Please enter a valid coupon code!</p>
+        <label class="coupon-label" for="coupon">Enter Coupon Code:</label>
+        <input class="coupon-input" type="text" name="coupon" value="">
         <button class="btn apply-coupon" type="button" name="button">Apply Coupon!</button>
       </div>
     </div>

@@ -28,3 +28,9 @@ button.btn {
 .order {
   display: none;
 }
+
+.coupon-alert {
+  display: none;
+  font-style: italic;
+  color: red;
+}

@@ -12,7 +12,7 @@ function Pizza(size, toppings) {
 }
 
 Order.prototype.applyCoupon = function () {
-  order.orderTotal *= .75;
+  order.orderTotal *= .85;
 };
 
 // Pizza.prototype.customTopping = function () {
@@ -22,7 +22,7 @@ Order.prototype.applyCoupon = function () {
 
 ////user interface logic////
 
-var order = new Order
+var order = new Order;
 
 function toppings() {
   var toppingsArray = [];
@@ -33,38 +33,49 @@ function toppings() {
 }
 
 function addPizza() {
+  console.log('pizza added');
   var pizza = new Pizza (parseInt($('.size input:checked').val()), toppings());
   order.orderItems.push(pizza);
   order.orderTotal += (pizza.size + pizza.toppings.length);
 };
 
 function getTotal() {
-    order.orderName = $('.ordername input').val();
-    $('.order').show();
-    $('p .totalpizzas').text(order.orderItems.length);
-    $('p .pricetotal').text(order.orderTotal.toFixed(2));
-    $('#pizzaform, .add-pizza, .get-total').hide();
+  console.log('user gets total');
+  order.orderName = $('.ordername input').val();
+  $('.order').show();
+  $('p .customername').text(order.orderName);
+  if (order.orderItems.length === 1) {
+    $('p .totalpizzas').text(order.orderItems.length + ' pizza');
+  } else if (order.orderItems.length > 1) {
+    $('p .totalpizzas').text(order.orderItems.length + ' pizzas');
+  };
+  $('p .pricetotal').text(order.orderTotal.toFixed(2));
+  $('#pizzaform, .add-pizza, .get-total').hide();
 };
 
-function applyCoupon() {
-  order.applyCoupon();
-  $('p .pricetotal').text(order.orderTotal.toFixed(2));
-  $('button.apply-coupon').hide();
-}
+function useCoupon() {
+  if ($('.coupon-input').val() === 'brambinos') {
+    console.log('user applies coupon');
+    order.applyCoupon();
+    $('p .pricetotal').text(order.orderTotal.toFixed(2));
+    $('button.apply-coupon, .coupon-label, .coupon-input').hide();
+    $('p.coupon-alert').hide();
+  } else {
+    console.log('user enters invalid coupon code');
+    $('p.coupon-alert').show();
+  };
+};
 
 $(document).ready(function() {
  console.log('jquery enabled');
   $('button.add-pizza').click(function() {
-    console.log('pizza added');
      addPizza();
   });
   $('button.get-total').click(function() {
-    console.log('user gets total');
     getTotal();
   });
   $('button.apply-coupon').click(function() {
-    console.log('user applies coupon');
-    applyCoupon();
+    useCoupon();
   });
 
 
