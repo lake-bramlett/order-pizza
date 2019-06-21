@@ -29,6 +29,14 @@ button.btn {
   display: none;
 }
 
+ul.pizza-list li {
+  display: inline;
+}
+
+div.pizza-info{
+  display: none;
+}
+
 .coupon-alert {
   display: none;
   font-style: italic;

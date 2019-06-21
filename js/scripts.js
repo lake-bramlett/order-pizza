@@ -6,7 +6,8 @@ function Order(deliverTo) {
   this.orderTotal = 0;
 }
 
-function Pizza(size, toppings) {
+function Pizza(id, size, toppings) {
+  this.id = id;
   this.size = size;
   this.toppings = toppings;
 }
@@ -32,11 +33,27 @@ function toppings() {
   return toppingsArray;
 }
 
+
+function displayPizzaInfo(pizzaNum) {
+  $('div.pizza-info').slideDown();
+  $('.pizza-info span.pizza-size').text(order.orderItems[pizzaNum].size);
+  $('.pizza-info span.pizza-toppings').text(order.orderItems[pizzaNum].toppings);
+}
+
+
 function addPizza() {
   console.log('pizza added');
-  var pizza = new Pizza (parseInt($('.size input:checked').val()), toppings());
+  var pizzaId = order.orderItems.length;
+  var pizza = new Pizza (pizzaId, parseInt($('.size input:checked').val()), toppings());
   order.orderItems.push(pizza);
   order.orderTotal += (pizza.size + pizza.toppings.length);
+  function appendPizzaList() {
+    $('ul.pizza-list').append('<li class="pizza' + pizzaId + '">Pizza #' + (pizzaId + 1));
+    $('ul.pizza-list li').click(function() {
+      displayPizzaInfo(pizzaId);
+    });
+  }
+  appendPizzaList()
 };
 
 function getTotal() {
