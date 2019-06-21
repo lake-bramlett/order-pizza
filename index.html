@@ -12,10 +12,11 @@
     <div class="container">
       <form id="pizzaform" action="index.html" method="post">
         <div class="form-group ordername">
-            <label for="odername"></label>
+            <label for="odername">Order Name</label>
             <input type="text" name="ordername" value="">
         </div>
         <div class="form-group size">
+          <h3>Pizza Size</h3>
           <div class="radio">
             <label>
               <input type="radio" name="size" value="12" checked>
@@ -36,6 +37,7 @@
           </div>
         </div>
         <div class="form-group toppings">
+          <h3>Pizza Toppings</h3>
           <label><input type="checkbox" name="toppings" value="Mushrooms">Mushrooms</label>
           <label><input type="checkbox" name="toppings" value="Sausage">Sausage</label>
           <label><input type="checkbox" name="toppings" value="Onion">Onion</label>
@@ -44,8 +46,9 @@
           <label><input type="checkbox" name="toppings" value="Pineapple">Pineapple</label>
           <label><input type="checkbox" name="toppings" value="Canadian Bacon">Canadian Bacon</label>
         </div>
-        <button class="btn" type="button" name="button">ORDER NOW!</button>
+        <button class="btn add-pizza" type="button" name="button">ADD PIZZA</button>
       </form>
+      <button class="btn get-total" type="button" name="button">GET TOTAL</button>
     </div>
   </body>
 </html>
