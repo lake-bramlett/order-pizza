@@ -1,13 +1,20 @@
 body {
-  background-color: #FFF8F0;
+  background-color: #6F1A07;
+  color: #ffffff;
 }
 
 h1 {
   text-align: center;
+  text-transform: uppercase;
+  font-size: 5rem;
 }
 
 h1, h3 {
-  color: #9DD9D2;
+  color: #828489;
+}
+
+h5, .dismiss {
+  display: inline;
 }
 
 button.btn {
@@ -23,6 +30,11 @@ button.btn {
 
 .radio {
   display: inline;
+}
+
+.toppings {
+  width: 50%;
+  margin: auto;
 }
 
 .order {
@@ -53,7 +65,7 @@ div.pizza-info p {
   margin-bottom: 0px;
 }
 
-.selected-pizza, ul.pizza-list li:hover {
+.selected-pizza, ul.pizza-list li:hover, .dismiss:hover {
   background-color: #000000;
   color: white;
 }
@@ -62,4 +74,17 @@ div.pizza-info p {
   display: none;
   font-style: italic;
   color: red;
+}
+
+.coupon-promo {
+  display: none;
+  position: fixed;
+  bottom: 0px;
+  text-align: center;
+  left: 25%;
+  background-color: blue;
+}
+
+.dismiss {
+  margin-left: 10px;
 }

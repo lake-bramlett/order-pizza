@@ -60,17 +60,19 @@ function addPizza() {
 };
 
 function getTotal() {
-  console.log('user gets total');
-  order.orderName = $('.ordername input').val();
-  $('.order').show();
-  $('p .customername').text(order.orderName);
-  if (order.orderItems.length === 1) {
-    $('p .totalpizzas').text(order.orderItems.length + ' pizza');
-  } else if (order.orderItems.length > 1) {
-    $('p .totalpizzas').text(order.orderItems.length + ' pizzas');
-  };
-  $('p .pricetotal').text(order.orderTotal.toFixed(2));
-  $('#pizzaform, .add-pizza, .get-total').hide();
+  if (order.orderTotal >= 1) {
+    console.log('user gets total');
+    order.orderName = $('.ordername input').val();
+    $('.order').show();
+    $('p .customername').text(order.orderName);
+    if (order.orderItems.length === 1) {
+      $('p .totalpizzas').text(order.orderItems.length + ' pizza');
+    } else if (order.orderItems.length > 1) {
+      $('p .totalpizzas').text(order.orderItems.length + ' pizzas');
+    };
+    $('p .pricetotal').text(order.orderTotal.toFixed(2));
+    $('#pizzaform, .add-pizza, .get-total').hide();
+  }
 };
 
 function useCoupon() {
@@ -97,6 +99,14 @@ $(document).ready(function() {
   $('button.apply-coupon').click(function() {
     useCoupon();
   });
+  setTimeout(function() {
+    $('div.coupon-promo').slideDown();
+  }, 1000);
+
+  $('.dismiss').click(function() {
+    $('div.coupon-promo').hide();
+  })
+
 
 
 });//jquery
