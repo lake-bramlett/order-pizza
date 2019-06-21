@@ -36,7 +36,7 @@ function toppings() {
 
 function displayPizzaInfo(pizzaNum) {
   $('div.pizza-info').slideDown();
-  $('.pizza-info span.pizza-size').text(order.orderItems[pizzaNum].size);
+  $('.pizza-info span.pizza-size').text(order.orderItems[pizzaNum].size + '"');
   $('.pizza-info span.pizza-toppings').text(order.orderItems[pizzaNum].toppings);
 }
 
@@ -50,7 +50,8 @@ function addPizza() {
   function appendPizzaList() {
     $('ul.pizza-list').append('<li class="pizza' + pizzaId + '">Pizza #' + (pizzaId + 1));
     $('ul.pizza-list li').click(function() {
-      displayPizzaInfo(pizzaId);
+      var pizzaIndex = $(this).index();
+      displayPizzaInfo(pizzaIndex);
     });
   }
   appendPizzaList()

@@ -29,6 +29,10 @@ button.btn {
   display: none;
 }
 
+ul.pizza-list {
+  padding-left: 0px;
+}
+
 ul.pizza-list li {
   display: inline;
 }
