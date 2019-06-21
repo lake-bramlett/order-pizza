@@ -1,5 +1,5 @@
 ////business logic////
-function Order(orderName, deliverTo) {
+function Order(deliverTo) {
   this.orderName = '';
   this.orderItems = [];
   this.deliverTo = deliverTo;
@@ -11,8 +11,12 @@ function Pizza(size, toppings) {
   this.toppings = toppings;
 }
 
-Pizza.prototype.pizzaTotal = function () {
-  return pizza.size + pizza.toppings.length;
+Order.prototype.applyCoupon = function () {
+  order.orderTotal /= 2;
+};
+
+Pizza.prototype.customTopping = function () {
+  this.toppings.push();
 };
 
 
