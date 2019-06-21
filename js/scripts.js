@@ -12,12 +12,12 @@ function Pizza(size, toppings) {
 }
 
 Order.prototype.applyCoupon = function () {
-  order.orderTotal /= 2;
+  order.orderTotal *= .75;
 };
 
-Pizza.prototype.customTopping = function () {
-  this.toppings.push();
-};
+// Pizza.prototype.customTopping = function () {
+//   this.toppings.push();
+// };
 
 
 ////user interface logic////
@@ -45,6 +45,11 @@ function getTotal() {
     $('p .pricetotal').text(order.orderTotal);
 };
 
+function applyCoupon() {
+  order.applyCoupon();
+  $('p .pricetotal').text(order.orderTotal);
+}
+
 $(document).ready(function() {
  console.log('jquery enabled');
   $('button.add-pizza').click(function() {
@@ -54,6 +59,10 @@ $(document).ready(function() {
   $('button.get-total').click(function() {
     console.log('user gets total');
     getTotal();
+  });
+  $('button.apply-coupon').click(function() {
+    console.log('user applies coupon');
+    applyCoupon();
   });
 
 
