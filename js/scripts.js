@@ -13,12 +13,12 @@ function Pizza(id, size, toppings) {
 }
 
 Order.prototype.applyCoupon = function () {
-  order.orderTotal *= .85;
+  this.orderTotal *= .85;
 };
 
-// Pizza.prototype.customTopping = function () {
-//   this.toppings.push();
-// };
+ Pizza.prototype.halfSize = function () {
+  this.size /= 2;
+};
 
 
 ////user interface logic////
