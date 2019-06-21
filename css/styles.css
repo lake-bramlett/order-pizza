@@ -35,10 +35,27 @@ ul.pizza-list {
 
 ul.pizza-list li {
   display: inline;
+  padding: 8px;
 }
 
 div.pizza-info{
   display: none;
+  width: fit-content;
+  max-width: 400px;
+  margin: auto;
+  margin-bottom: 1.5%;
+  border: 3px solid #000000;
+  border-radius: 12px;
+  padding: 15px;
+}
+
+div.pizza-info p {
+  margin-bottom: 0px;
+}
+
+.selected-pizza, ul.pizza-list li:hover {
+  background-color: #000000;
+  color: white;
 }
 
 .coupon-alert {

@@ -50,6 +50,8 @@ function addPizza() {
   function appendPizzaList() {
     $('ul.pizza-list').append('<li class="pizza' + pizzaId + '">Pizza #' + (pizzaId + 1));
     $('ul.pizza-list li').click(function() {
+      $('ul.pizza-list li').removeClass('selected-pizza');
+      $(this).addClass('selected-pizza')
       var pizzaIndex = $(this).index();
       displayPizzaInfo(pizzaIndex);
     });
