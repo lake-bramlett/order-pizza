@@ -2,9 +2,50 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Order Pizza</title>
   </head>
   <body>
-
+    <div class="container">
+      <form id="pizzaform" action="index.html" method="post">
+        <div class="form-group ordername">
+            <label for="odername"></label>
+            <input type="text" name="ordername" value="">
+        </div>
+        <div class="form-group size">
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="12" checked>
+              12"
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="16">
+              16"
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="20">
+              20"
+            </label>
+          </div>
+        </div>
+        <div class="form-group toppings">
+          <label><input type="checkbox" name="toppings" value="Mushrooms">Mushrooms</label>
+          <label><input type="checkbox" name="toppings" value="Sausage">Sausage</label>
+          <label><input type="checkbox" name="toppings" value="Onion">Onion</label>
+          <label><input type="checkbox" name="toppings" value="Green Pepper">Green Pepper</label>
+          <label><input type="checkbox" name="toppings" value="Pepperoni">Pepperoni</label>
+          <label><input type="checkbox" name="toppings" value="Pineapple">Pineapple</label>
+          <label><input type="checkbox" name="toppings" value="Canadian Bacon">Canadian Bacon</label>
+        </div>
+        <button class="btn" type="button" name="button">ORDER NOW!</button>
+      </form>
+    </div>
   </body>
 </html>
