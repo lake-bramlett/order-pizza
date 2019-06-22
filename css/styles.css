@@ -1,6 +1,7 @@
 body {
   background-color: #6F1A07;
   color: #ffffff;
+  text-align: center;
 }
 
 h1 {
@@ -9,16 +10,20 @@ h1 {
   background-size: contain;
   background-repeat: no-repeat;
   text-align: center;
-  text-transform: uppercase;
   font-size: 5rem;
 }
 
 h1, h3 {
-  color: #828489;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-weight: 700;
 }
 
 h5, .dismiss {
-  display: inline;
+  display: inline-block;
 }
 
 button.btn {
@@ -26,6 +31,11 @@ button.btn {
   color: white;
   margin-bottom: 10px;
   text-transform: uppercase;
+}
+
+button.btn:hover {
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .container {
@@ -86,9 +96,15 @@ div.pizza-info p {
   bottom: 0px;
   text-align: center;
   left: 25%;
-  background-color: blue;
+  right: 25%;
+  background-color: #000000;
 }
 
 .dismiss {
-  margin-left: 10px;
+  margin: 0px 10px;
+  width: 1%;
+}
+
+.dismiss:hover {
+  cursor: pointer;
 }

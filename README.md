@@ -23,6 +23,7 @@ _'Order Pizza' is a client-side program that simulates an online pizza ordering 
 | Program creates and adds pizza to order based on user selection | user selection: size='12"', toppings='Pepperoni, Mushroom, Onion' |  pizza: size='12"', toppings='Pepperoni, Mushroom, Onion'|
 | Program lists assembled pizzas in a horizontal list for user to see      | user enters 3 pizzas      |   user sees 'pizza #1', 'pizza #2', 'pizza #3' listed |
 | Program removes pizza building options compiles order for review when 'place order' button is clicked | user clicks button    | user is presented with listed pizzas ordered and name (if one is given) |
+| Program prompts user to enter valid discount code if the input does not match discount code | 'cheappizza' | 'Please enter a valid coupon code!' | 
 | Program discounts total sum by 15% is coupon code is entered | total sum: $44 | new sum: $37.40 |
 
 ## Known Bugs

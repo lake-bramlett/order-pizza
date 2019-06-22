@@ -100,7 +100,7 @@ $(document).ready(function() {
     useCoupon();
   });
   setTimeout(function() {
-    $('div.coupon-promo').slideDown();
+    $('div.coupon-promo').slideDown().css('display','flex');
   }, 1000);
 
   $('.dismiss').click(function() {
